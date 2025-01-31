@@ -5,6 +5,7 @@ import (
 	"log/slog"
 
 	"github.com/LukeHackett/cobra-cli-demo/internal/service"
+	"github.com/LukeHackett/cobra-cli-demo/internal/utils"
 	"github.com/spf13/cobra"
 )
 
@@ -25,7 +26,9 @@ to quickly create a Cobra application.`,
 		slog.Warn("A warn Log")
 		slog.Error("An error Log")
 
-		svc := &service.UserService{BaseUrl: "https://jsonplaceholder.typicode.com"}
+		config := utils.GetConfig(cmd.Context())
+
+		svc := &service.UserService{BaseUrl: config.BaseUrl()}
 
 		res := svc.FetchAll()
 
@@ -34,7 +37,6 @@ to quickly create a Cobra application.`,
 }
 
 func init() {
-	rootCmd.AddCommand(listUsersCmd)
 
 	// Here you will define your flags and configuration settings.
 

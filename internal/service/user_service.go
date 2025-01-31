@@ -43,9 +43,7 @@ func (service UserService) FetchById(id int) []byte {
 	return []byte{}
 }
 
-// func main() {
-// 	svc := UserService{baseUrl: "http://example.com"}
+func NewUserService() *UserService {
 
-// 	svc.FetchAll()
-
-// }
+	return &UserService{}
+}

@@ -3,6 +3,7 @@ package logging
 import (
 	"log"
 	"log/slog"
+	"math"
 )
 
 func ConfigureLogging(debug bool) {
@@ -11,6 +12,6 @@ func ConfigureLogging(debug bool) {
 		slog.SetLogLoggerLevel(slog.LevelDebug)
 	} else {
 		log.SetFlags(0) // turn off all additional flags
-		slog.SetLogLoggerLevel(slog.LevelInfo)
+		slog.SetLogLoggerLevel(math.MaxInt)
 	}
 }

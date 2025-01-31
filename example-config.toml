@@ -1,0 +1,11 @@
+[default]
+base-url = 'https://jsonplaceholder.typicode.com'
+foo = 'bar'
+port = 9999
+
+[lolz]
+foo = 'bar2'
+
+[test]
+base-url = 'test.luke.com'
+port = 8888
